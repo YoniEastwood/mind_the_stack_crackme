@@ -50,7 +50,7 @@ The format string vulnerability was exploited to read values from the stack and 
 
 Through dynamic debugging with `gdb` (`pwndbg`), the offset of the Canary relative to the `printf` call was determined.
 
-![pwndbg output showing the stack layout and the leaked Canary value](image_placeholder_2.png)
+![pwndbg output showing the stack layout and the leaked Canary value](assets/leaked_canary.png)
 
 It was established that the Canary resides at offset 9. Therefore, the payload `%9$016lx` was crafted to specifically leak the 64-bit Canary value in hexadecimal format.
 
